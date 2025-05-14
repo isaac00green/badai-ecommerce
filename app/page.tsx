@@ -175,7 +175,7 @@ export default function Home() {
                     <div className="flex flex-col sm:flex-row gap-2">
                       <Link href={`/product/${product.id}`}>
                         <Button size="sm" className="hover:bg-gray-800 hover:text-white">
-                          View Detailss
+                          View Details
                         </Button>
                       </Link>
                       <Button
