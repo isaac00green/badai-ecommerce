@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 import { ShoppingCart, Sparkles, Users, Award, Clock, Heart } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
@@ -33,7 +34,7 @@ export default function AboutUsPage() {
               </h2>
               <div className="space-y-4 text-zinc-300">
                 <p>
-                  BadAi was founded in 2023 when our CEO, Alex Terrible, noticed something peculiar about AI art: when
+                  BadAi was founded in 2025 when our CEO, Isaac, noticed something about AI art: when
                   it fails, it fails in the most fascinating and hilarious ways.
                 </p>
                 <p>
@@ -41,20 +42,27 @@ export default function AboutUsPage() {
                   made it worse, but in the most entertaining way possible?"
                 </p>
                 <p>
-                  Thus, BadAi was born – a company dedicated to the proposition that not all art needs to be good to be
+                  Thus, BadAi was born – a company dedicated to the proposition that not all art needs to be good or realistic to be
                   valuable. Sometimes, the most memorable pieces are the ones that make you say "What on earth am I
                   looking at?" while simultaneously being unable to look away.
                 </p>
                 <p>
                   Today, our team of "de-artists" works tirelessly to ensure that each piece we create hits that perfect
                   sweet spot of recognizable yet hilariously wrong. We've shipped thousands of pieces to customers
-                  worldwide who appreciate the unique charm of algorithmic absurdity.
+                  worldwide who appreciate the unique charm of Ai paintings.
                 </p>
               </div>
             </div>
             <div className="bg-zinc-800 rounded-xl p-6">
               <div className="aspect-video rounded-lg bg-zinc-700 flex items-center justify-center">
-                <Users className="h-24 w-24 text-rose-500/50" />
+                <Image
+                  src="/images/ourteam.png" // Path relative to public folder
+                  alt="Descriptive alt text for the image"
+                  width={1536} // Original width of your image
+                  height={1024} // Original height (maintain aspect ratio)
+                  className="object-cover w-1536 h-1024 rounded-lg"
+                  quality={100} // Optional: reduce image quality for performance
+                />
               </div>
             </div>
           </div>
@@ -89,8 +97,7 @@ export default function AboutUsPage() {
                 </div>
                 <h3 className="text-xl font-bold mb-4 text-gray-200">Customer Satisfaction</h3>
                 <p className="text-zinc-300">
-                  We're not happy unless you're laughing. Our success is measured not in artistic achievement but in the
-                  number of coffee spittakes and confused head tilts our art generates in your home.
+                  We're not happy unless you're laughing. Our success is measured not in artistic achievement but in confused head tilts our art generates in your home.
                 </p>
               </CardContent>
             </Card>
@@ -102,8 +109,7 @@ export default function AboutUsPage() {
                 </div>
                 <h3 className="text-xl font-bold mb-4 text-gray-200">Innovation in Regression</h3>
                 <p className="text-zinc-300">
-                  While others push AI forward, we're pioneering new ways to make it stumble backward. Our R&D
-                  department works tirelessly to discover novel methods of artistic confusion.
+                  While others push AI forward, we're pioneering new ways to make it stumble backward. Our team works tirelessly to discover novel methods of artistic confusion.
                 </p>
               </CardContent>
             </Card>
@@ -122,7 +128,11 @@ export default function AboutUsPage() {
             {teamMembers.map((member, index) => (
               <Card key={index} className="bg-zinc-800 border-zinc-700">
                 <CardContent className="p-6 text-center">
-                  <div className="w-24 h-24 rounded-full bg-zinc-700 mx-auto mb-4"></div>
+                  <div className="w-24 h-24 rounded-full bg-rose-600 flex items-center justify-center mx-auto mb-4">
+                    <span className="text-white font-bold text-sm">
+                      {member.name.split(' ').map(n => n[0]).join('')}
+                    </span>      
+                  </div>
                   <h3 className="text-xl font-bold text-gray-200">{member.name}</h3>
                   <p className="text-rose-500 mb-4">{member.title}</p>
                   <p className="text-zinc-300 text-sm">{member.bio}</p>
@@ -175,7 +185,7 @@ export default function AboutUsPage() {
 
 const teamMembers = [
   {
-    name: "Alex Terrible",
+    name: "Isaac Ai",
     title: "Founder & CEO",
     bio: "Former fine art curator who decided that bad art is more interesting. Specializes in explaining why artistic failures are actually successes.",
   },
@@ -190,7 +200,7 @@ const teamMembers = [
     bio: "Creates the contradictory prompts that confuse our AI models into producing their most entertainingly bad work.",
   },
   {
-    name: "Sam Absurdity",
+    name: "Sam Terrible",
     title: "Marketing Director",
     bio: "Convinced the world needs more intentionally bad art. Previously sold ice to Eskimos and sand to desert dwellers.",
   },
