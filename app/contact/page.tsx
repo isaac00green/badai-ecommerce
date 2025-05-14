@@ -113,7 +113,7 @@ export default function ContactPage() {
                         </div>
                         <div>
                           <h3 className="font-bold text-gray-200">Phone</h3>
-                          <p className="text-zinc-300">(555) BAD-ARTS</p>
+                          <p className="text-zinc-300">(+365) 01100101</p>
                           <p className="text-zinc-400 text-sm">Mon-Fri, 9am-5pm EST</p>
                         </div>
                       </li>
@@ -123,7 +123,7 @@ export default function ContactPage() {
                         </div>
                         <div>
                           <h3 className="font-bold text-gray-200">Address</h3>
-                          <p className="text-zinc-300">Digital Wasteland, Internet</p>
+                          <p className="text-zinc-300">World Wide Web</p>
                           <p className="text-zinc-400 text-sm">We're primarily online, but our servers are real!</p>
                         </div>
                       </li>
