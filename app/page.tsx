@@ -147,13 +147,17 @@ export default function Home() {
           <h2 className="mb-12 text-center text-3xl font-bold">
             What Our <span className="text-rose-500">Victims</span> Say
           </h2>
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 items-stretch">
             {testimonials.map((testimonial, index) => (
-              <Card key={index} className="bg-zinc-800 border-zinc-700">
-                <CardContent className="p-6">
-                  <p className="mb-4 italic text-zinc-300">"{testimonial.quote}"</p>
+              <Card key={index} className="bg-zinc-800 border-zinc-700 h-full">
+                <CardContent className="p-6 flex flex-col h-full">
+                  <p className="mb-4 italic text-zinc-300 flex-1">"{testimonial.quote}"</p>
                   <div className="flex items-center gap-4">
-                    <div className="h-12 w-12 rounded-full bg-zinc-700"></div>
+                    <div className="h-12 w-12 rounded-full bg-rose-600 flex items-center justify-center">
+                      <span className="text-white font-bold text-sm">
+                        {testimonial.name.split(' ').map(n => n[0]).join('')}
+                      </span>
+                    </div>
                     <div>
                       <p className="font-bold text-gray-200">{testimonial.name}</p>
                       <p className="text-sm text-zinc-400">{testimonial.title}</p>
