@@ -56,12 +56,12 @@ export default function AboutUsPage() {
             <div className="bg-zinc-800 rounded-xl p-6">
               <div className="aspect-video rounded-lg bg-zinc-700 flex items-center justify-center">
                 <Image
-                  src="/images/ourteam.png" // Path relative to public folder
+                  src="/images/ourteam.png" 
                   alt="Descriptive alt text for the image"
-                  width={1536} // Original width of your image
-                  height={1024} // Original height (maintain aspect ratio)
+                  width={1536} 
+                  height={1024} 
                   className="object-cover w-1536 h-1024 rounded-lg"
-                  quality={100} // Optional: reduce image quality for performance
+                  quality={80} 
                 />
               </div>
             </div>

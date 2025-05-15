@@ -5,8 +5,20 @@ import { ShoppingCart, Sparkles, Mail, Phone, MapPin, Send } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { useCart } from "@/lib/cart-context"
+import { relative } from "path"
+import { text } from "stream/consumers"
+import { useState } from 'react' 
 
 export default function ContactPage() {
+  const [message, setMessage] = useState('')
+
+  const handleMessageChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    const MAX_MESSAGE_LENGTH = 300;
+    if (e.target.value.length <= MAX_MESSAGE_LENGTH) {
+      setMessage(e.target.value);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-zinc-900 text-zinc-100">
       {/* Hero Banner */}
@@ -73,12 +85,21 @@ export default function ContactPage() {
                     <label htmlFor="message" className="block text-sm font-medium mb-2">
                       Message
                     </label>
-                    <textarea
-                      id="message"
-                      rows={6}
-                      className="w-full px-4 py-2 bg-zinc-700 border border-zinc-600 rounded-md focus:outline-none focus:ring-2 focus:ring-rose-500"
-                      placeholder="Tell us what's on your mind..."
-                    ></textarea>
+                    <div className="relative">
+                      <textarea
+                        id="message"
+                        rows={6}
+                        value={message}
+                        onChange={handleMessageChange}
+                        className="w-full px-4 py-2 bg-zinc-700 border border-zinc-600 rounded-md focus:outline-none focus:ring-2 focus:ring-rose-500 min-h-[200px] max-h-[400px]"
+                        placeholder="Tell us what's on your mind..."
+                      ></textarea>
+                        <div className={`text-xs mt-1 ${
+                          message.length >= 300 ? 'text-rose-500' : 'text-zinc-400'
+                        }`}>
+                          {message.length}/300 characters
+                        </div>
+                    </div>
                   </div>
                   <Button className="w-full bg-rose-600 hover:bg-rose-700">
                     <Send className="mr-2 h-4 w-4" />
